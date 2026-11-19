@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — all 55 GTA VI trophies, tracked</title>
+<meta name="description" content="An offline guide and tracker for the 55 PlayStation 5 trophies of Grand Theft Auto VI: official names, a cited guide for each, a platinum roadmap, missable flags and saved progress.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23e84393'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="lede">Every trophy, with its official name and description, a guide in our own words, and the source it comes from. Tick off what you have earned — your progress stays in this browser, offline.</p>
+    <div class="progress-wrap" aria-label="Progress">
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill" style="width:0%"></div></div>
+      <p class="progress-text"><strong id="progress-count">0 of 55 earned</strong> <span id="progress-pct">0%</span> &middot; <span id="progress-grades">0 platinum &middot; 0 gold &middot; 0 silver &middot; 0 bronze</span></p>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button id="tab-tracker" class="tab active" type="button" aria-selected="true">Tracker</button>
+  <button id="tab-roadmap" class="tab" type="button" aria-selected="false">Platinum roadmap</button>
+  <button id="tab-about" class="tab" type="button" aria-selected="false">About &amp; sources</button>
+</nav>
+
+<main>
+  <section id="view-tracker" class="view">
+    <div class="controls" role="search">
+      <label class="control search">Search
+        <input id="search" type="search" placeholder="Trophy name, mission or word…" autocomplete="off">
+      </label>
+      <label class="control">Kind
+        <select id="kind">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="crime">Crime &amp; robberies</option>
+          <option value="side-quests">Side quests</option>
+          <option value="other">Other</option>
+          <option value="online">Online</option>
+        </select>
+      </label>
+      <label class="control">Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="control">Show
+        <select id="earned-filter">
+          <option value="all">All trophies</option>
+          <option value="earned">Earned only</option>
+          <option value="missing">Not earned yet</option>
+        </select>
+      </label>
+      <label class="control toggle"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
+      <div class="control buttons">
+        <button id="export" type="button">Export progress</button>
+        <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+        <button id="reset" type="button" class="quiet">Reset</button>
+      </div>
+    </div>
+    <p id="filter-note" class="filter-note" hidden></p>
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+    <ol id="cards" class="cards"></ol>
+    <p id="empty" class="empty" hidden>No trophies match these filters. Try clearing the search or choosing another kind.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>The road to the platinum</h2>
+    <p class="section-lede">One playthrough, about 200 hours, no online trophies and no mission replay. Play the story first — only one thing can be missed — then work the 100% checklist, then clean up the rest. <span class="warn">Keep a manual save at the start and end of every chapter.</span></p>
+    <ol id="roadmap" class="roadmap"></ol>
+    <aside class="callout">
+      <h3>Before you start</h3>
+      <ul>
+        <li><strong>Cheats switch trophies off</strong> — and saving too. Keep them off for a trophy run.</li>
+        <li><strong>No mission replay, no New Game+.</strong> There are 15 manual save slots: keep one at the start and end of each chapter and rotate the rest for free-roam cleanup.</li>
+        <li><strong>Only one trophy is potentially missable:</strong> Positive Mental Attitude — the Chapter 1 meditation at Jason's house.</li>
+        <li><strong>Five trophies have no verified method yet</strong> at launch (In The Beginning…, Capital Offense, Bad Luck, I Guess, The Truth Is Out There, Ten Pin). Their guides say so plainly instead of guessing.</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section id="view-about" class="view" hidden>
+    <h2>About this guide</h2>
+    <p>Names, descriptions and grades are the official PlayStation 5 trophy list as published at launch (55 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze; 28 hidden until earned). Every guide is written in our own words from the sources below — nothing is copied from another guide, and where no reliable source exists yet the guide says so instead of inventing a step.</p>
+    <h3>Sources</h3>
+    <ul id="source-list" class="source-list"></ul>
+    <h3>How your progress is stored</h3>
+    <p>Ticking a trophy saves its id in this browser's local storage — nothing leaves your device. Export writes a JSON file you can keep or move to another browser; import reads that file back. The app fetches nothing over the network: it is a static page plus one local data file, and it works with the network off.</p>
+    <p class="fineprint">Unofficial fan guide. Grand Theft Auto and GTA are trademarks of Rockstar Games / Take-Two Interactive. This guide uses no Rockstar artwork, logos or screenshots.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Guide — 55 trophies, one platinum. Data: the official PS5 list (18 Nov 2026). Guides: our own words, cited per trophy.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
